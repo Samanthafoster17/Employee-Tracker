@@ -136,7 +136,7 @@ function viewAll() {
 
 
 function viewAllDept() {
-    console.log("displaying all department's...\n");
+    console.log("displaying all departments...\n");
     connection.query("SELECT * FROM department", function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -145,6 +145,7 @@ function viewAllDept() {
 }
 
 function viewByDept() {
+    console.log('displaying all employees by department...\n');
     connection.query(
         `SELECT employee.id, employee.first_name, employee.last_name, department.dept_name FROM employee
         INNER JOIN role ON employee.role_id = role.id
@@ -152,7 +153,6 @@ function viewByDept() {
         ORDER BY department.dept_name ASC`,
         function (err, res) {
             if (err) throw err;
-            console.log('displaying by department...\n')
             console.table(res);
             init();
         }
@@ -160,6 +160,7 @@ function viewByDept() {
 }
 
 function viewByRole() {
+    console.log('displaying all employees by role...\n');
     connection.query(
         `SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, department.dept_name FROM employee 
            INNER JOIN role ON employee.role_id = role.id
@@ -167,7 +168,6 @@ function viewByRole() {
            ORDER BY role.title ASC`,
         function (err, data) {
             if (err) throw err;
-            console.log('displaying by role...\n')
             console.table(data);
             init();
         }
@@ -187,7 +187,6 @@ function viewByMngr() {
         ORDER BY manager ASC`,
         function (err, res) {
             if (err) throw err;
-            console.log('displaying by manager...\n')
             console.table(res);
             init();
         }
@@ -211,7 +210,7 @@ function viewAllMngr() {
 }
 
 function viewAllRole() {
-    console.log("displaying all role's...\n");
+    console.log("displaying all roles...\n");
     connection.query("SELECT * FROM role", function (err, res) {
         if (err) throw err;
         console.table(res);
