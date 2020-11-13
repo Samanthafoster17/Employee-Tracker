@@ -46,4 +46,4 @@ You may view GitHub profile here:
 ![image](https://user-images.githubusercontent.com/68489432/99110687-c7ba0800-25b8-11eb-929b-8d12b973c33e.png)
 
 ## Link to video demo
-https://drive.google.com/file/d/1D4XusL6jqHk6lp0u3-038MNO-X5ojm0p/view
+https://drive.google.com/file/d/170aTpuJYwhJAjRSata5f2M-hqBAg4ucA/view
