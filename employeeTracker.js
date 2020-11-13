@@ -136,7 +136,7 @@ function viewAll() {
 
 
 function viewAllDept() {
-    console.log("displaying by department...\n");
+    console.log("displaying all department's...\n");
     connection.query("SELECT * FROM department", function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -152,6 +152,7 @@ function viewByDept() {
         ORDER BY department.dept_name ASC`,
         function (err, res) {
             if (err) throw err;
+            console.log('displaying by department...\n')
             console.table(res);
             init();
         }
@@ -166,6 +167,7 @@ function viewByRole() {
            ORDER BY role.title ASC`,
         function (err, data) {
             if (err) throw err;
+            console.log('displaying by role...\n')
             console.table(data);
             init();
         }
@@ -185,6 +187,7 @@ function viewByMngr() {
         ORDER BY manager ASC`,
         function (err, res) {
             if (err) throw err;
+            console.log('displaying by manager...\n')
             console.table(res);
             init();
         }
@@ -208,7 +211,7 @@ function viewAllMngr() {
 }
 
 function viewAllRole() {
-    console.log("displaying by role...\n");
+    console.log("displaying all role's...\n");
     connection.query("SELECT * FROM role", function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -413,16 +416,23 @@ function updateRole() {
                     });
 
                     let updRole = data.find(function (updRole) {
-                        return updRole.title === answer.updRole
+                        return updRole.title === answer.updRole 
+                    
                     });
+
+                    let updDept = res.find(function (updDept){
+                        return updRole.department_id === answer.updRole.department_id
+                    });
+
 
                     connection.query(
                         `UPDATE employee SET role_id = ? 
                         WHERE id = (SELECT id FROM(SELECT id FROM employee WHERE CONCAT(first_name, " ", last_name) = ?)AS NAME)`,
-                        [updRole.id, answer.updEmpl],
+                        [updRole.id, answer.updEmpl, updRole.department_id],
                         function (err) {
                             if (err) throw err;
-                            console.log("Your employee's role has been successfully updated!");
+                           
+                            console.log("Your employee's role has been successfully updated!", updRole);
                             init();
                         }
                     );
