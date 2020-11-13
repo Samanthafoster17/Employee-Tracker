@@ -41,3 +41,6 @@ Please send any questions to: Samanthafoster17@gmail.com
 
 You may view GitHub profile here: 
 -[Github Profile](https://github.com/Samanthafoster17).
+
+# Image
+![image](https://user-images.githubusercontent.com/68489432/99110687-c7ba0800-25b8-11eb-929b-8d12b973c33e.png)
