@@ -409,7 +409,6 @@ function updateRole() {
 
                 ])
                 .then(function (answer) {
-                    // console.log(response);
                     let updEmpl = res.find(function (updEmpl) {
                         return (updEmpl.first_name + " " + updEmpl.last_name) === answer.updEmpl
                     });
@@ -419,18 +418,15 @@ function updateRole() {
                     
                     });
 
-                    let updDept = res.find(function (updDept){
-                        return updRole.department_id === answer.updRole.department_id
-                    });
 
 
                     connection.query(
-                        `UPDATE employee SET role_id = ? 
+                        `UPDATE employee SET role_id = ?
                         WHERE id = (SELECT id FROM(SELECT id FROM employee WHERE CONCAT(first_name, " ", last_name) = ?)AS NAME)`,
-                        [updRole.id, answer.updEmpl, updRole.department_id],
+                        [updRole.id, answer.updEmpl],
                         function (err) {
                             if (err) throw err;
-                           
+                        
                             console.log("Your employee's role has been successfully updated!", updRole);
                             init();
                         }
