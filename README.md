@@ -19,8 +19,7 @@
 
 - [Image](#Image)
 
-
--[Link](#Link)
+ -[Link](#Link)
 
 
 ## Description
@@ -50,5 +49,5 @@ You may view GitHub profile here:
 ## Image
 ![image](https://user-images.githubusercontent.com/68489432/99110687-c7ba0800-25b8-11eb-929b-8d12b973c33e.png)
 
-## Link to video demo
+## Link 
 https://drive.google.com/file/d/170aTpuJYwhJAjRSata5f2M-hqBAg4ucA/view
