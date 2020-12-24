@@ -19,7 +19,7 @@
 
 - [Image](#Image)
 
--[Link](#Link to video demo)
+ -[Link](#Link to video demo)
 
 
 ## Description
