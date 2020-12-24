@@ -17,6 +17,10 @@
 
 - [Questions](#questions) 
 
+- [Image](#Image)
+
+-[Link](#Link to video demo)
+
 
 ## Description
 Employee-Tracker allows users to view employees, employee roles, employee departments, and employee managers. Add employees, roles, and departments. Delete employees, roles, and departments. Update employee managers and employee roles. Sort employees by role, department, or manager. As well as view the utilized budget of each department. 
